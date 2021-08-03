@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <RelativeLayout
+        tools:context="com.example.android.materialme.DetailActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/sports_image_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_badminton"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:id="@+id/title_detail"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/sports_image_detail"
+        android:padding="8dp"
+        android:text="@string/title_placeholder"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <TextView
+        android:id="@+id/newsTitle_detail"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sports_image_detail"
+        android:padding="8dp"
+        android:text="@string/news_placeholder"
+        android:textColor="?android:textColorSecondary" />
+
+    <TextView
+        android:id="@+id/subTitle_detail"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newsTitle_detail"
+        android:padding="16dp"
+        android:text="@string/lorem_ipsum_text" />
+
+    </RelativeLayout>
+</ScrollView>
