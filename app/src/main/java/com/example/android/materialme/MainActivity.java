@@ -19,6 +19,7 @@ package com.example.android.materialme;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.materialme.adapter.SportsAdapter;
 import com.example.android.materialme.model.Sport;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private ArrayList<Sport> mSportList;
     private SportsAdapter mAdapter;
+    private FloatingActionButton fab;
 
     private TypedArray sportsImageResources;
 
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sportsImageResources = getResources().obtainTypedArray(R.array.sports_images);
+        fab = findViewById(R.id.fab);
 
         //Initialize the RecyclerView
         mRecyclerView = findViewById(R.id.recycler_view);
@@ -132,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
         String[] sportsList = getResources().getStringArray(R.array.sports_titles);
         String[] sportsInfo = getResources().getStringArray(R.array.sports_info);
 
+        sportsImageResources = getResources().obtainTypedArray(R.array.sports_images);
+
         //Clear the existing data (to avoid duplication)
         mSportList.clear();
 
@@ -147,4 +152,9 @@ public class MainActivity extends AppCompatActivity {
         sportsImageResources.recycle();
     }
 
+
+    public void refreshSports(View v) {
+
+        initializeData();
+    }
 }
